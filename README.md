@@ -10,3 +10,14 @@ python版本前后端分离
 ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐  
 │  环境就绪        │     │  请求正确路由    │     │  API接口可调用   │  
 └─────────────────┘     └─────────────────┘     └─────────────────┘  
+
+
+总结
+整个 Python 后端遵循 Django “MTV” 架构（模型 Model - 模板 Template - 视图 View），结合 DRF（Django REST Framework）实现 API 接口：
+模型（Model）：models.py定义数据结构，映射数据库；
+视图（View）：views.py处理业务逻辑，响应前端请求；
+序列化器（Serializer）：serializers.py衔接模型与 JSON，处理数据转换和验证；
+路由（URL）：urls.py（主项目 + APP）分发请求，关联路径与视图；
+配置：settings.py和apps.py定义项目全局和 APP 的参数；
+管理与测试：admin.py提供后台管理，tests.py保证代码质量，manage.py负责项目运维。
+这些文件协同工作，实现了订单模块的基础 API 功能（查询、新增），是 Django 后端的核心组成部分。
